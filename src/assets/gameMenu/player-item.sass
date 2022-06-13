@@ -1,0 +1,42 @@
+.player-item
+  width: 100%
+  border: 8px solid #0e0e0e
+  padding: 5px
+  box-sizing: border-box
+  border-radius: 5px
+  margin: 0 0 2% 0
+  cursor: pointer
+
+  &--move-active
+    border: 8px solid #0f8c0f
+
+  &--check-active
+    border: 8px solid #8c690f
+    position: relative
+
+  &--not-active
+    border: 8px solid #6c736c
+    background: #a7ada7
+    opacity: 0.8
+    cursor: auto
+
+.player-item__title
+  font-size: 20px
+  text-align: center
+  margin-bottom: 5px
+
+.player-item__total
+  font-size: 22px
+  line-height: 25px
+  text-align: center
+
+.player-item__photo-wrapper
+  width: 30%
+  height: 30%
+  border-radius: 50%
+  overflow: hidden
+  margin: 0 auto
+
+.player-item__photo
+  width: 100%
+  object-fit: contain
