@@ -9,10 +9,11 @@ export default {
           name: "Alex",
           total: 10000,
           position: 0,
-          owns: [6, 8, 9],
+          owns: [],
           moveNumber: null,
           status: true,
           pointColor: "#5faa12",
+          payForCircle: false,
         },
         {
           id: 1,
@@ -23,6 +24,7 @@ export default {
           moveNumber: null,
           status: true,
           pointColor: "#1242aa",
+          payForCircle: false,
         },
         {
           id: 2,
@@ -33,6 +35,7 @@ export default {
           moveNumber: null,
           status: true,
           pointColor: "#aa124c",
+          payForCircle: false,
         },
       ],
 
@@ -72,10 +75,23 @@ export default {
     moveUser(state, newData) {
       state.userData.forEach((item) => {
         if (item.id === newData.id) {
-          item.position =
-            newData.position + item.position <= 39
-              ? newData.position + item.position
-              : newData.position + item.position - 40;
+          if (newData.position + item.position <= 39) {
+            item.position = newData.position + item.position;
+          } else {
+            item.position = newData.position + item.position - 40;
+
+            item.payForCircle = true;
+          }
+        }
+      });
+    },
+
+    payCircle(state, id) {
+      state.userData.forEach((item) => {
+        if (item.id === id && item.payForCircle) {
+          console.log("pay");
+          item.payForCircle = false;
+          item.total += 4000;
         }
       });
     },

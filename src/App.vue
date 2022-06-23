@@ -120,6 +120,7 @@ export default {
           if (newMove) {
             //console.log("move next");
             this.moveUser({ id: this.getCurrentId, position: this.dice });
+            this.payCircle(this.getCurrentId);
             await this.moveChips();
             //console.log("getCurrentUser", this.getCurrentUser);
             /////////!!!!!!!!!!!
@@ -314,6 +315,7 @@ export default {
       "changeUserIndex",
       "payment",
       "acceptPayment",
+      "payCircle",
     ]),
     ...mapMutations("gameState", ["changeGameState"]),
     ...mapMutations("cardsState", ["changeCardIndex", "buyCard"]),
