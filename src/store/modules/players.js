@@ -9,7 +9,7 @@ export default {
           name: "Alex",
           total: 10000,
           position: 0,
-          owns: [],
+          owns: [6, 8, 9],
           moveNumber: null,
           status: true,
           pointColor: "#5faa12",
@@ -17,7 +17,7 @@ export default {
         {
           id: 1,
           name: "Pit",
-          total: 1000,
+          total: 10000,
           position: 0,
           owns: [],
           moveNumber: null,
@@ -27,7 +27,7 @@ export default {
         {
           id: 2,
           name: "Erick",
-          total: 1000,
+          total: 10000,
           position: 0,
           owns: [],
           moveNumber: null,
@@ -104,6 +104,16 @@ export default {
       state.userData.forEach((item) => {
         if (item.id === data.userId) {
           item.total += data.sum;
+        }
+      });
+    },
+
+    personCardLoss(state, id) {
+      state.userData.forEach((item) => {
+        if (item.id === state.currentUser) {
+          item.owns.forEach((card, index) => {
+            if (id === card) delete item.owns[index];
+          });
         }
       });
     },

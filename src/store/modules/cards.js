@@ -14,6 +14,7 @@ export default {
           rent: null,
           type: "start",
           owner: null,
+          selected: false,
         },
         {
           id: 1,
@@ -27,6 +28,8 @@ export default {
           lineColor: "#fac123",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 2,
@@ -38,6 +41,7 @@ export default {
           rent: null,
           type: "question",
           owner: null,
+          selected: false,
         },
         {
           id: 3,
@@ -51,6 +55,8 @@ export default {
           lineColor: "#fac123",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 4,
@@ -62,6 +68,7 @@ export default {
           rent: null,
           type: "bank",
           owner: null,
+          selected: false,
         },
         {
           id: 5,
@@ -74,6 +81,8 @@ export default {
           type: "card",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 6,
@@ -86,7 +95,9 @@ export default {
           type: "card",
           lineColor: "#0b2c9f",
           backgroundColor: "#ffffff",
-          owner: null,
+          owner: 0,
+          selected: false,
+          laid: false,
         },
         {
           id: 7,
@@ -98,6 +109,7 @@ export default {
           rent: null,
           type: "question",
           owner: null,
+          selected: false,
         },
         {
           id: 8,
@@ -110,7 +122,9 @@ export default {
           type: "card",
           lineColor: "#0b2c9f",
           backgroundColor: "#ffffff",
-          owner: null,
+          owner: 0,
+          selected: false,
+          laid: false,
         },
         {
           id: 9,
@@ -123,7 +137,9 @@ export default {
           type: "card",
           lineColor: "#0b2c9f",
           backgroundColor: "#ffffff",
-          owner: null,
+          owner: 0,
+          selected: false,
+          laid: false,
         },
         {
           id: 10,
@@ -135,6 +151,7 @@ export default {
           rent: null,
           type: "jail",
           owner: null,
+          selected: false,
         },
         {
           id: 11,
@@ -148,6 +165,8 @@ export default {
           lineColor: "#ad0772",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 12,
@@ -160,6 +179,8 @@ export default {
           type: "card",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 13,
@@ -173,6 +194,8 @@ export default {
           lineColor: "#ad0772",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 14,
@@ -186,6 +209,8 @@ export default {
           lineColor: "#ad0772",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 15,
@@ -198,6 +223,8 @@ export default {
           type: "card",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 16,
@@ -211,6 +238,8 @@ export default {
           lineColor: "#18ad07",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 17,
@@ -222,6 +251,7 @@ export default {
           rent: null,
           type: "question",
           owner: null,
+          selected: false,
         },
         {
           id: 18,
@@ -235,6 +265,8 @@ export default {
           lineColor: "#18ad07",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 19,
@@ -248,6 +280,8 @@ export default {
           lineColor: "#18ad07",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 20,
@@ -259,6 +293,7 @@ export default {
           rent: null,
           type: "jackpot",
           owner: null,
+          selected: false,
         },
         {
           id: 21,
@@ -272,6 +307,8 @@ export default {
           lineColor: "#045427",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 22,
@@ -283,6 +320,7 @@ export default {
           rent: null,
           type: "question",
           owner: null,
+          selected: false,
         },
         {
           id: 23,
@@ -296,6 +334,8 @@ export default {
           lineColor: "#045427",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 24,
@@ -309,6 +349,8 @@ export default {
           lineColor: "#045427",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 25,
@@ -321,6 +363,8 @@ export default {
           type: "card",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 26,
@@ -334,6 +378,8 @@ export default {
           lineColor: "#5d0854",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 27,
@@ -347,6 +393,8 @@ export default {
           lineColor: "#5d0854",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 28,
@@ -359,6 +407,8 @@ export default {
           type: "card",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 29,
@@ -372,6 +422,8 @@ export default {
           lineColor: "#5d0854",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 30,
@@ -383,6 +435,7 @@ export default {
           rent: null,
           type: "jail",
           owner: null,
+          selected: false,
         },
         {
           id: 31,
@@ -396,6 +449,8 @@ export default {
           lineColor: "#5d0808",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 32,
@@ -409,6 +464,8 @@ export default {
           lineColor: "#5d0808",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 33,
@@ -420,6 +477,7 @@ export default {
           rent: null,
           type: "question",
           owner: null,
+          selected: false,
         },
         {
           id: 34,
@@ -433,6 +491,8 @@ export default {
           lineColor: "#5d0808",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 35,
@@ -445,6 +505,8 @@ export default {
           type: "card",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 36,
@@ -456,6 +518,7 @@ export default {
           rent: null,
           type: "taxes",
           owner: null,
+          selected: false,
         },
         {
           id: 37,
@@ -469,6 +532,8 @@ export default {
           lineColor: "#8939c9",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
         {
           id: 38,
@@ -480,6 +545,7 @@ export default {
           rent: null,
           type: "question",
           owner: null,
+          selected: false,
         },
         {
           id: 39,
@@ -493,6 +559,8 @@ export default {
           lineColor: "#8939c9",
           backgroundColor: "#ffffff",
           owner: null,
+          selected: false,
+          laid: false,
         },
       ],
 
@@ -510,6 +578,41 @@ export default {
 
       if (state.allCards[state.cardIndex].backgroundColor)
         state.allCards[state.cardIndex].backgroundColor = data.userColor;
+    },
+
+    changeSelectOneCard(state, id) {
+      state.allCards.forEach((item) => {
+        if (item.id === id) {
+          item.selected = !item.selected;
+        } else {
+          item.selected = false;
+        }
+      });
+    },
+
+    layCard(state, id) {
+      state.allCards.forEach((item) => {
+        if (item.id === id) {
+          item.laid = !item.laid;
+        }
+      });
+    },
+
+    cardLoss(state, id) {
+      state.allCards.forEach((item) => {
+        if (item.id === id) {
+          item.backgroundColor = "#ffffff";
+          item.owner = null;
+        }
+      });
+    },
+
+    improveCard(state, id) {
+      state.allCards.forEach((item) => {
+        if (item.id === id) {
+          item.level += 1;
+        }
+      });
     },
   },
 
@@ -544,6 +647,18 @@ export default {
       return state.allCards[state.cardIndex].price;
     },
 
+    getCanImprove(state) {
+      let price = 0;
+      let canLevel;
+      state.allCards.forEach((item) => {
+        if (item.selected) {
+          price = item.rent[item.level + 1] + item.price;
+          canLevel = item.level < item.max_level;
+        }
+      });
+      return { price, canLevel };
+    },
+
     getRentCard(state) {
       if (Array.isArray(state.allCards[state.cardIndex].rent)) {
         return state.allCards[state.cardIndex].rent[
@@ -552,6 +667,14 @@ export default {
       }
 
       return state.allCards[state.cardIndex].rent;
+    },
+
+    getMoneyForLay(state) {
+      let money = 0;
+      state.allCards.forEach((item) => {
+        if (item.selected) money = item.price;
+      });
+      return money;
     },
 
     belongCard(state) {

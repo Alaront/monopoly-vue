@@ -4,11 +4,13 @@
     :class="[
       `playing-field-card--${typeV}`,
       { 'playing-field-card--with-price': data.price },
+      { 'playing-field-card--laid': data.laid },
     ]"
     :data-field="[`${data.id}`]"
     :style="{
       'background-color': data.backgroundColor,
     }"
+    @click="showCardMenu"
   >
     <h4>{{ data.title }}</h4>
 
@@ -39,13 +41,68 @@
       class="playing-field-card__price"
       >{{ data.price }}</span
     >
+
+    <div
+      class="laying-field-menu"
+      v-if="data.type === 'card'"
+      :class="data.selected ? 'laying-field-menu--open' : ''"
+    >
+      <button @click.stop="laidCard">Продать {{ data.price }}$</button>
+      <button @click.stop="improvedCard()">Улучшить 100$</button>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapMutations, mapGetters } from "vuex";
+
 export default {
   props: ["data", "typeV"],
   name: "playingFieldCard",
+  methods: {
+    showCardMenu() {
+      if (this.getCurrentUser.id === this.data.owner) {
+        this.changeSelectOneCard(this.data.id);
+      }
+    },
+
+    laidCard() {
+      this.layCard(this.data.id);
+      this.acceptPayment({
+        userId: this.getCurrentUser.id,
+        sum: this.getMoneyForLay,
+      });
+      this.cardLoss(this.data.id);
+      this.changeSelectOneCard(this.data.id);
+      this.personCardLoss(this.data.id);
+    },
+
+    improvedCard() {
+      const canImprove = this.getCanImprove;
+      if (
+        this.getCurrentUser.total >= canImprove.price &&
+        canImprove.canLevel
+      ) {
+        this.improveCard(this.data.id);
+        this.payment({
+          userId: this.getCurrentUser.id,
+          price: canImprove.price,
+        });
+      }
+    },
+
+    ...mapMutations("cardsState", ["changeSelectOneCard", "cardLoss"]),
+    ...mapMutations("cardsState", ["layCard", "improveCard"]),
+    ...mapMutations("playersState", [
+      "acceptPayment",
+      "personCardLoss",
+      "payment",
+    ]),
+  },
+  computed: {
+    ...mapGetters("playersState", ["getIsMainUserId", "getCurrentUser"]),
+    ...mapGetters("cardsState", ["getMoneyForLay", "getCanImprove"]),
+  },
 };
 </script>
 
