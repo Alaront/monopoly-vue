@@ -36,6 +36,6 @@ export function newDice(count) {
 }
 
 export function enoughMoneyBuy(userHaveMoney, cardPrice) {
-  console.log(userHaveMoney, cardPrice);
+  console.log("enoughMoneyBuy", userHaveMoney, cardPrice);
   return userHaveMoney >= cardPrice;
 }

@@ -18,7 +18,7 @@ export default {
         {
           id: 1,
           name: "Pit",
-          total: 10000,
+          total: 5000,
           position: 0,
           owns: [],
           moveNumber: null,
@@ -29,7 +29,7 @@ export default {
         {
           id: 2,
           name: "Erick",
-          total: 10000,
+          total: 5000,
           position: 0,
           owns: [],
           moveNumber: null,

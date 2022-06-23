@@ -61,13 +61,13 @@ export default {
         {
           id: 4,
           title: "$",
-          price: null,
+          price: 1000,
           level: null,
           max_level: null,
           friendsIdCards: [],
           rent: null,
-          type: "bank",
-          owner: null,
+          type: "card",
+          owner: "not",
           selected: false,
         },
         {

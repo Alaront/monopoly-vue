@@ -145,13 +145,13 @@ export default {
                   price: this.getCardPrice,
                 });
               }
-
+              console.log("debagger", this.belongCard);
               if (
                 newBuyOrPay &&
                 typeof this.belongCard === "number" &&
                 this.belongCard !== this.getCurrentUser.id
               ) {
-                console.log("this.belongCard !!!!!!!!!!!!!", this.belongCard);
+                console.log("this.belongCard 3", this.belongCard);
                 this.payment({
                   userId: this.getCurrentUser.id,
                   price: this.getCardPrice,
@@ -160,7 +160,13 @@ export default {
                   userId: this.belongCard,
                   sum: this.getRentCard,
                 });
-              } else if (!newBuyOrPay && this.belongCard) {
+              } else if (newBuyOrPay && this.belongCard === "not") {
+                console.log("bank");
+                this.payment({
+                  userId: this.getCurrentUser.id,
+                  price: this.getCardPrice,
+                });
+              } else if (!newBuyOrPay && typeof this.belongCard === "number") {
                 this.missingUser({ id: this.getCurrentId, status: false });
                 console.log("missingUser");
               }
@@ -347,6 +353,7 @@ export default {
       this.needMoveOrderAlert = false;
       this.needStartDiceAlert = false;
       this.needWorkFieldAlert = false;
+      this.changeGameState("off");
 
       this.changeGameState("endDefeat");
     },
