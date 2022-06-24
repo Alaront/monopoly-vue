@@ -82,7 +82,7 @@ export default {
 
       this.getAllPlayers.forEach((item) => {
         document
-          .querySelector("body")
+          .querySelector(".content-wrapper")
           .insertAdjacentHTML(
             "beforeend",
             `<span class="game-chips" data-user=${
@@ -326,7 +326,6 @@ export default {
     diceForMain(dice) {
       //console.log("dice", dice);
       this.dice = dice;
-      this.dice = 4;
 
       this.needStartDiceAlert = false;
       let event = new Event("diceForMainEvent");
