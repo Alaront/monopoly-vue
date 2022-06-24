@@ -12,12 +12,19 @@
 
     <alert-start-dice v-if="needStartDiceAlert" @newMainDice="diceForMain" />
 
-    <!--    <alert-defealt v-if="getGameState === 'endDefeat'"></alert-defealt>-->
-
     <alert-work-field
       v-if="needWorkFieldAlert"
       @newBuyEvent="newEventYes"
     ></alert-work-field>
+
+    <alert-defealt
+      v-if="needDefeatAlert || getGameState === 'endDefeat'"
+    ></alert-defealt>
+
+    <alert-user-win
+      v-if="needAlertUserWin"
+      :name="userWinName"
+    ></alert-user-win>
   </div>
 </template>
 
@@ -27,9 +34,10 @@ import gameMenu from "./components/game/menu/gameMenu";
 import alertStartGame from "./components/helpers/alertStartGame";
 import alertStartDice from "./components/helpers/alertStartDice";
 import alertWorkField from "./components/helpers/alertWorkField";
-//import alertDefealt from "./components/helpers/alertDefeat";
-
+import alertDefealt from "./components/helpers/alertDefeat";
 import alertShowMoveOrder from "./components/helpers/alertShowMoveOrder";
+import alertUseWin from "./components/helpers/alertUseWin";
+
 import { mapGetters, mapMutations } from "vuex";
 import { newDice, newMoveOrder, enoughMoneyBuy } from "./assets/main/game";
 
@@ -41,8 +49,9 @@ export default {
     "alert-start-game": alertStartGame,
     "alert-show-move-order": alertShowMoveOrder,
     "alert-start-dice": alertStartDice,
-    //"alert-defealt": alertDefealt,
+    "alert-defealt": alertDefealt,
     "alert-work-field": alertWorkField,
+    "alert-user-win": alertUseWin,
   },
 
   data() {
@@ -50,8 +59,11 @@ export default {
       needMoveOrderAlert: false,
       needStartDiceAlert: false,
       needWorkFieldAlert: false,
+      needDefeatAlert: false,
       dice: 0,
       allFieldSort: [],
+      needAlertUserWin: false,
+      userWinName: "",
     };
   },
 
@@ -111,7 +123,7 @@ export default {
       this.needMoveOrderAlert = false;
 
       while (this.getGameState === "on") {
-        //console.log("a");
+        console.log("a");
 
         if (this.getCurrentUser.status) {
           const newMove = await this.move();
@@ -166,8 +178,13 @@ export default {
                   userId: this.getCurrentUser.id,
                   price: this.getCardPrice,
                 });
-              } else if (!newBuyOrPay && typeof this.belongCard === "number") {
+              } else if (
+                !newBuyOrPay &&
+                (typeof this.belongCard === "number" ||
+                  this.belongCard === "not")
+              ) {
                 this.missingUser({ id: this.getCurrentId, status: false });
+                this.userWin();
                 console.log("missingUser");
               }
             }
@@ -175,6 +192,7 @@ export default {
             //console.log("ded");
             //this.gameDefeat();
             this.missingUser({ id: this.getCurrentId, status: false });
+            this.userWin();
           }
         }
 
@@ -188,6 +206,17 @@ export default {
     changeUserData() {
       this.changeUserIndex();
       this.changeCurrentUser(this.getAllPlayers[this.getUserIndex].id);
+    },
+
+    userWin() {
+      const isUserWin = this.getWinUser;
+
+      if (isUserWin) {
+        this.needAlertUserWin = true;
+        this.userWinName = isUserWin.name;
+        this.changeGameState("off");
+        console.log("WIN!!!!", isUserWin.name);
+      }
     },
 
     moveChips() {
@@ -297,6 +326,7 @@ export default {
     diceForMain(dice) {
       //console.log("dice", dice);
       this.dice = dice;
+      this.dice = 4;
 
       this.needStartDiceAlert = false;
       let event = new Event("diceForMainEvent");
@@ -337,6 +367,7 @@ export default {
       "getIsMainUser",
       "getUserIndex",
       "getMainUserLose",
+      "getWinUser",
     ]),
     ...mapGetters("cardsState", [
       "getIsCard",
@@ -354,6 +385,7 @@ export default {
       this.needStartDiceAlert = false;
       this.needWorkFieldAlert = false;
       this.changeGameState("off");
+      this.needDefeatAlert = true;
 
       this.changeGameState("endDefeat");
     },

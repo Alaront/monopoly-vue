@@ -18,7 +18,7 @@ export default {
         {
           id: 1,
           name: "Pit",
-          total: 5000,
+          total: 1000,
           position: 0,
           owns: [],
           moveNumber: null,
@@ -33,7 +33,7 @@ export default {
           position: 0,
           owns: [],
           moveNumber: null,
-          status: true,
+          status: false,
           pointColor: "#aa124c",
           payForCircle: false,
         },
@@ -160,6 +160,23 @@ export default {
       });
 
       return user;
+    },
+
+    getWinUser(state) {
+      let user = null;
+      let count = 0;
+      state.userData.forEach((item) => {
+        if (item.status) {
+          count += 1;
+          user = item;
+        }
+      });
+
+      if (count === 1) {
+        return user;
+      }
+
+      return false;
     },
 
     getCurrentId(state) {

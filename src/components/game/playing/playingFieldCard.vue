@@ -44,11 +44,13 @@
 
     <div
       class="laying-field-menu"
-      v-if="data.type === 'card'"
+      v-if="data.type === 'card' && data.owner !== 'not'"
       :class="data.selected ? 'laying-field-menu--open' : ''"
     >
       <button @click.stop="laidCard">Продать {{ data.price }}$</button>
-      <button @click.stop="improvedCard()">Улучшить 100$</button>
+      <button @click.stop="improvedCard()">
+        Улучшить {{ data.rent[data.level + 1] + data.price }}$
+      </button>
     </div>
   </div>
 </template>
