@@ -7,7 +7,7 @@ export default {
         {
           id: 0,
           name: "Alex",
-          total: 10000,
+          total: 100000,
           position: 0,
           owns: [],
           moveNumber: null,
@@ -29,11 +29,11 @@ export default {
         {
           id: 2,
           name: "Erick",
-          total: 5000,
+          total: 1000,
           position: 0,
           owns: [],
           moveNumber: null,
-          status: false,
+          status: true,
           pointColor: "#aa124c",
           payForCircle: false,
         },

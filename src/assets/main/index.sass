@@ -1,6 +1,9 @@
 body
   position: relative
 
+#app
+  height: 100%
+
 .content-wrapper
   padding: 20px 0
   position: relative
@@ -27,3 +30,45 @@ body
   height: 10px
   transition: 0.8s
   z-index: 99
+
+.home-page-wrap
+  height: 100%
+  display: flex
+  flex-direction: column
+
+.home-header
+  width: 95%
+  margin: 0 auto
+  padding: 20px
+
+.home-header__title
+  font-size: 40px
+  line-height: 45px
+  text-align: center
+
+.main-content
+  width: 20%
+  height: 100%
+  padding: 0 200px
+  flex-grow: 1
+  align-items: center
+  justify-content: center
+  display: flex
+  padding-bottom: 10%
+
+  nav
+    width: 100%
+
+.main-menu
+  border: 2px solid $black_default
+  border-radius: 20px
+  padding: 20px
+
+  a
+    padding: 5px 0
+    display: block
+    width: 100%
+    color: $black_default
+    font-size: 25px
+    text-decoration: none
+    cursor: pointer
