@@ -4,21 +4,18 @@
       <h1 class="home-header__title">Monopoly on Vue</h1>
     </header>
     <main class="main main-content">
-      <nav class="nav">
-        <ul class="main-menu">
-          <li v-for="link in links" :key="link.url">
-            <a :href="link.url">
-              {{ link.title }}
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <menu-component type="vertical" />
     </main>
   </div>
 </template>
 
 <script>
+import menuComponent from "@/components/menuComponent";
+
 export default {
+  components: {
+    "menu-component": menuComponent,
+  },
   name: "pageHome",
   data() {
     return {
