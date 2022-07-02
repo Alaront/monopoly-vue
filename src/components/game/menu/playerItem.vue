@@ -17,7 +17,7 @@
       />
     </div>
     <h4 class="player-item__title">{{ name }}</h4>
-    <p class="player-item__total">{{ total }} $</p>
+    <p v-if="total !== null" class="player-item__total">{{ total }} $</p>
 
     <player-menu @click.stop v-if="needMenu" :user="id" />
   </div>

@@ -18,7 +18,7 @@ export default {
         {
           id: 1,
           name: "Pit",
-          total: 1000,
+          total: 0,
           position: 0,
           owns: [],
           moveNumber: null,
@@ -57,6 +57,10 @@ export default {
         state.userIndex === state.userData.length - 1
           ? 0
           : (state.userIndex += 1);
+    },
+
+    changeUserName(state, newName) {
+      state.userData[state.mainUser].name = newName;
     },
 
     changeMoveNumber(state, newOrder) {
@@ -197,6 +201,13 @@ export default {
 
     getMainUserLose(state) {
       return state.mainUserLose;
+    },
+
+    getMainUserOptions(state) {
+      return {
+        name: state.userData[state.mainUser].name,
+        color: state.userData[state.mainUser].pointColor,
+      };
     },
   },
 };
