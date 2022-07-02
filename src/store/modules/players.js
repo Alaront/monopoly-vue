@@ -5,17 +5,6 @@ export default {
     return {
       userData: [
         {
-          id: 0,
-          name: "Alex",
-          total: 100000,
-          position: 0,
-          owns: [],
-          moveNumber: null,
-          status: true,
-          pointColor: "#5faa12",
-          payForCircle: false,
-        },
-        {
           id: 1,
           name: "Pit",
           total: 0,
@@ -24,6 +13,17 @@ export default {
           moveNumber: null,
           status: true,
           pointColor: "#1242aa",
+          payForCircle: false,
+        },
+        {
+          id: 0,
+          name: "Alex",
+          total: 100000,
+          position: 0,
+          owns: [],
+          moveNumber: null,
+          status: true,
+          pointColor: "#5faa12",
           payForCircle: false,
         },
         {
@@ -60,7 +60,19 @@ export default {
     },
 
     changeUserName(state, newName) {
-      state.userData[state.mainUser].name = newName;
+      state.userData.forEach((item) => {
+        if (item.id === state.mainUser) {
+          item.name = newName;
+        }
+      });
+    },
+
+    changeUserColor(state, newColor) {
+      state.userData.forEach((item) => {
+        if (item.id === state.mainUser) {
+          item.pointColor = newColor;
+        }
+      });
     },
 
     changeMoveNumber(state, newOrder) {
@@ -204,10 +216,19 @@ export default {
     },
 
     getMainUserOptions(state) {
-      return {
-        name: state.userData[state.mainUser].name,
-        color: state.userData[state.mainUser].pointColor,
+      let user = {
+        name: null,
+        color: null,
       };
+
+      state.userData.forEach((item) => {
+        if (item.id === state.mainUser) {
+          user.name = item.name;
+          user.color = item.pointColor;
+        }
+      });
+
+      return user;
     },
   },
 };

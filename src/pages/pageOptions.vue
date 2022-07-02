@@ -19,6 +19,15 @@
             @input="updateName"
           />
         </div>
+        <div class="options__user-edit-color">
+          <h3>Color:</h3>
+          <color-picker
+            format="hex"
+            @pureColorChange="updateColor"
+            v-model:pureColor="getMainUserOptions.color"
+            v-model:gradientColor="gradientColor"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -30,19 +39,33 @@ import playerItem from "@/components/game/menu/playerItem";
 
 import { mapGetters, mapMutations } from "vuex";
 
+import { ColorPicker } from "vue3-colorpicker";
+import "vue3-colorpicker/style.css";
+
 export default {
   components: {
     "menu-component": menuComponent,
     "player-item": playerItem,
+    "color-picker": ColorPicker,
   },
   name: "pageOptions",
+  data() {
+    return {
+      pureColor: "red",
+      gradientColor:
+        "linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 100%)",
+    };
+  },
   methods: {
     updateName(e) {
-      console.log(e.target.value);
       this.changeUserName(e.target.value);
     },
 
-    ...mapMutations("playersState", ["changeUserName"]),
+    updateColor(e) {
+      this.changeUserColor(e);
+    },
+
+    ...mapMutations("playersState", ["changeUserName", "changeUserColor"]),
   },
   computed: {
     ...mapGetters("playersState", ["getMainUserOptions"]),
