@@ -71,6 +71,11 @@ export default {
     this.initPoints();
   },
 
+  beforeUnmount() {
+    console.log("beforeUnmount");
+    this.changeGameState("off");
+  },
+
   methods: {
     initPoints() {
       const { top, left, width, height } = document
@@ -123,6 +128,7 @@ export default {
       this.needMoveOrderAlert = false;
 
       while (this.getGameState === "on") {
+        console.log("this.getGameState", this.getGameState);
         console.log("a");
 
         if (this.getCurrentUser.status) {
@@ -314,13 +320,6 @@ export default {
           clearTimeout(timerMove);
         });
       });
-    },
-
-    gameDefeat() {
-      //console.log("ded");
-      this.missingUser({ id: this.getCurrentId, status: false });
-      //console.log("getCurrentUser", this.getCurrentUser);
-      this.needStartDiceAlert = false;
     },
 
     diceForMain(dice) {
