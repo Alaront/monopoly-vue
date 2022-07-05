@@ -32,4 +32,4 @@ export default {
 };
 </script>
 
-<style lang="sass" src="@/assets/helpers/alertShowMoveOrder.sass"></style>
+<style lang="sass" src="@/assets/alerts/alertShowMoveOrder.sass"></style>

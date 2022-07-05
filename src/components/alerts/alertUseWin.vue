@@ -12,4 +12,4 @@ export default {
 };
 </script>
 
-<style lang="sass" src="@/assets/helpers/alertUserWin.sass"></style>
+<style lang="sass" src="@/assets/alerts/alertUserWin.sass"></style>

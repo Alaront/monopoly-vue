@@ -31,12 +31,12 @@
 <script>
 import playingField from "../components/game/playing/playingField";
 import gameMenu from "../components/game/menu/gameMenu";
-import alertStartGame from "../components/helpers/alertStartGame";
-import alertStartDice from "../components/helpers/alertStartDice";
-import alertWorkField from "../components/helpers/alertWorkField";
-import alertDefealt from "../components/helpers/alertDefeat";
-import alertShowMoveOrder from "../components/helpers/alertShowMoveOrder";
-import alertUseWin from "../components/helpers/alertUseWin";
+import alertStartGame from "../components/alerts/alertStartGame";
+import alertStartDice from "../components/alerts/alertStartDice";
+import alertWorkField from "../components/alerts/alertWorkField";
+import alertDefealt from "../components/alerts/alertDefeat";
+import alertShowMoveOrder from "../components/alerts/alertShowMoveOrder";
+import alertUseWin from "../components/alerts/alertUseWin";
 
 import { mapGetters, mapMutations } from "vuex";
 import { newDice, newMoveOrder, enoughMoneyBuy } from "../assets/main/game";

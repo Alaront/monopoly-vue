@@ -23,4 +23,4 @@ export default {
 };
 </script>
 
-<style lang="sass" src="@/assets/helpers/alertStartDice.sass"></style>
+<style lang="sass" src="@/assets/alerts/alertStartDice.sass"></style>

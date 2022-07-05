@@ -38,4 +38,4 @@ export default {
 };
 </script>
 
-<style src="@/assets/helpers/alertWorkField.sass" lang="sass"></style>
+<style src="@/assets/alerts/alertWorkField.sass" lang="sass"></style>

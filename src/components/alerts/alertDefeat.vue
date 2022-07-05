@@ -11,4 +11,4 @@
 export default {};
 </script>
 
-<style lang="sass" src="@/assets/helpers/alertDefeat.sass"></style>
+<style lang="sass" src="@/assets/alerts/alertDefeat.sass"></style>

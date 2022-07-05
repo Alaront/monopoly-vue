@@ -26,4 +26,4 @@ export default {
 };
 </script>
 
-<style lang="sass" src="@/assets/helpers/alertStartGame.sass"></style>
+<style lang="sass" src="@/assets/alerts/alertStartGame.sass"></style>
